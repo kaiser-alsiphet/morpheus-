@@ -1,0 +1,28 @@
+{
+  "rows": 17453,
+  "null_text": 18,
+  "bad_labels": 0,
+  "duplicate_ids": 0,
+  "label_counts": {
+    "1": 10243,
+    "0": 7210
+  },
+  "source_counts": {
+    "HC3-chatgpt": 10243,
+    "HC3-human": 7210
+  },
+  "generator_counts": {
+    "chatgpt": 10243,
+    "human": 7210
+  },
+  "words_describe": {
+    "count": 17453.0,
+    "mean": 156.9,
+    "std": 107.5,
+    "min": 0.0,
+    "25%": 80.0,
+    "50%": 148.0,
+    "75%": 212.0,
+    "max": 1629.0
+  }
+}

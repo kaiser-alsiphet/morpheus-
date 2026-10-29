@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI Slop Detector – estimate whether text was written by AI</title>
+<meta name="description" content="Paste text and get a likelihood estimate of whether it is human-written or AI-generated. Not proof of authorship.">
+<link rel="stylesheet" href="design-system.css"></head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div id="load" role="status" aria-live="polite"><span>Loading…</span></div>
+<div id="bar" role="presentation"></div><div class="bg" aria-hidden="true"></div><div id="cur" aria-hidden="true"></div>
+<header><a class="logo" href="#top">AI Slop Detector</a>
+<button id="nb" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i><i></i></button>
+<nav id="nav" aria-label="Main"><ul><li><a href="#how">How it works</a></li><li><a href="#faq">FAQ</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#delete">Delete my data</a></li></ul></nav></header>
+<main id="main" tabindex="-1">
+<section class="hero" id="top"><h1 id="h1">Human or slop? Find out.</h1>
+<p class="mu rv">Paste any text and get a likelihood estimate. It is an estimate, not proof: it cannot show who wrote something and is not a plagiarism or cheating detector.</p>
+<form class="rv" id="age" aria-label="Age confirmation"><label><input type="checkbox" id="ok"> I am 16 or older, or I have a parent or guardian's permission to use this tool.</label>
+<a class="btn mag" id="go" href="http://localhost:7860" aria-disabled="true">Open the detector</a></form>
+<div class="px" role="img" aria-label="Abstract illustration of two overlapping text blocks, one handwritten-style and one machine-regular"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><rect width="800" height="300" fill="#16162A"/><g stroke="#FCEE0A" stroke-width="6" stroke-linecap="round" fill="none"><path d="M60 80q40-30 80 0t80 0t80 0t80 0"/><path d="M60 130q50 20 100-10t100 10t100-10"/><path d="M60 180q30-25 70 5t90-15t80 10"/></g><g stroke="#00F0FF" stroke-width="6" stroke-linecap="round"><path d="M440 80h300M440 120h300M440 160h300M440 200h300"/></g></svg></div></section>
+<section id="how"><h2 class="rv">How it works</h2><div class="grid">
+<div class="card rv"><h3>1. You paste text</h3><p class="mu">The text is analyzed on the server running the tool.</p></div>
+<div class="card rv"><h3>2. Two models score it</h3><p class="mu">A TF-IDF baseline and a fine-tuned DistilBERT classifier, trained on public datasets.</p></div>
+<div class="card rv"><h3>3. You get an estimate</h3><p><span class="tag human">HUMAN</span> <span class="tag ai">AI</span></p><p class="mu">AI and human likelihoods, with a warning when the result is uncertain or the text is short.</p></div></div></section>
+<section id="faq"><h2 class="rv">FAQ</h2>
+<details><summary>Can it prove someone used AI?</summary><p>No. It gives a statistical estimate that can be wrong. Do not use it as the sole basis for any decision about a person.</p></details>
+<details><summary>When is it most likely to be wrong?</summary><p>Short text, edited or paraphrased AI text, translated text, formal writing, writing by non-native speakers, and text from newer AI models than it was trained on.</p></details>
+<details><summary>Does it cost anything?</summary><p>No. There are no fees, subscriptions or paid features.</p></details>
+<details><summary>Do you store my text?</summary><p>No. See the Privacy section.</p></details></section>
+<section id="privacy"><h2>Privacy policy</h2><p class="mu">Template: replace placeholders and have a lawyer review it for your jurisdiction (e.g. GDPR, India DPDP Act).</p>
+<p><b>Controller:</b> [BUSINESS NAME], [REGISTERED ADDRESS], [REGISTRATION/GST NO.], contact: [EMAIL].</p>
+<p><b>Data we process:</b> the text you paste, only to compute a result; it is not saved or used for training. Your server's standard logs may contain IP address and time, kept for [30] days for security. We do not ask for names, accounts or payment details.</p>
+<p><b>Third parties:</b> none embedded. No analytics, ads, social widgets, external fonts or CDNs on this page. The tool's models were downloaded once from Hugging Face at setup time.</p>
+<p><b>Your rights:</b> access, correction, deletion, and complaint to your data protection authority. Use the deletion form below. <b>Children:</b> not intended for under 16s; we do not knowingly collect their data.</p></section>
+<section id="terms"><h2>Terms of service</h2>
+<p>By using the tool you agree: (1) results are estimates and carry no guarantee of accuracy; (2) you will not use results as sole evidence of cheating, plagiarism or misconduct, or to harass anyone; (3) you will not submit unlawful content or personal data of others without a legal basis; (4) the service is provided "as is", and liability is limited to the extent the law allows; (5) governing law: [JURISDICTION]. We may change these terms by updating this page.</p>
+<p><b>Fees and refunds:</b> the service is free, so there are no charges, hidden fees or refunds. If paid features are ever added, a refund policy will be published before any payment is taken.</p>
+<p><b>Email:</b> we send no marketing emails. If that ever changes, we will ask for opt-in consent and include an unsubscribe link in every message.</p></section>
+<section id="cookies"><h2>Cookie policy</h2><p>This site sets no cookies and loads no tracking or advertising scripts. It stores one item in your browser's local storage (<code>cc</code>) to remember your cookie-banner choice. You can clear it in your browser settings. If non-essential cookies are added later, they will stay off until you accept.</p></section>
+<section id="delete"><h2>Request data deletion</h2><p>We do not keep your pasted text, but you can ask us to delete or show any data we hold about you (for example server logs).</p>
+<form id="df"><label>Your email (so we can reply)<input type="email" id="em" required autocomplete="email"></label>
+<label><input type="checkbox" id="dc" required> I consent to you using this email only to handle this request.</label>
+<button class="btn mag" type="submit">Send deletion request</button><p class="mu" id="dm" role="status"></p></form></section></main>
+<footer><p><b>[BUSINESS NAME]</b> · [REGISTERED ADDRESS] · [REGISTRATION NO.] · <a href="mailto:contact@example.com">contact@example.com</a> · [PHONE]</p>
+<p>No fonts or images are loaded from third parties: fonts (Chakra Petch, Lexend, JetBrains Mono, SIL OFL) are self-hosted and the illustration is original inline SVG made for this project (replace the licence line if you add assets). </p></footer>
+<div class="fab"><a class="btn mag" href="mailto:contact@example.com" aria-label="Contact us by email">Contact</a></div>
+<div id="ck" role="dialog" aria-label="Cookie notice" hidden><p>We use no non-essential cookies. We remember only this choice. <a href="#cookies">Cookie policy</a></p><button class="btn" data-c="accepted">Accept</button><button class="btn" data-c="rejected">Reject</button></div>
+<script src="app.js" defer></script></body></html>

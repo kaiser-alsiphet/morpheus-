@@ -1,0 +1,12 @@
+{
+  "input_rows": 17453,
+  "removed_null": 18,
+  "removed_empty": 0,
+  "removed_below_min_words": 571,
+  "min_words": 20,
+  "removed_exact_duplicates": 112,
+  "flagged_and_excluded_pii": 102,
+  "near_duplicate_pairs": 72,
+  "near_dup_threshold": 0.9,
+  "output_rows": 16650
+}

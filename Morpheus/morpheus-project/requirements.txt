@@ -1,0 +1,14 @@
+pandas
+numpy
+scikit-learn
+torch
+transformers>=4.41
+datasets
+evaluate
+accelerate
+gradio
+matplotlib
+seaborn
+joblib
+python-dotenv
+pytest

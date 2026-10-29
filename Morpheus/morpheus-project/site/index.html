@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Morpheus — AI writing likelihood detector</title>
+  <meta name="description" content="Morpheus estimates whether text contains patterns commonly associated with AI-generated writing. It is an estimate, not proof of authorship.">
+  <link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div id="load" role="status" aria-live="polite"><span>MORPHEUS</span></div>
+  <div id="bar" role="presentation"></div>
+  <div class="bg" aria-hidden="true"><span class="orb orb-one"></span><span class="orb orb-two"></span></div>
+  <div id="cur" aria-hidden="true"></div>
+
+  <header>
+    <a class="logo" href="#top" aria-label="Morpheus home">MORPHEUS<span class="logo-dot">.</span></a>
+    <button id="nb" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i><i></i></button>
+    <nav id="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#detector">Detector</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">NLP CLASSIFICATION / 001</p>
+        <h1 id="h1">IS THIS WRITTEN BY A HUMAN?</h1>
+        <p class="hero-lede rv">Morpheus reads the patterns in a piece of writing and returns a likelihood estimate. Clear, experimental, and never presented as proof.</p>
+        <form class="age-gate rv" id="age" aria-label="Age confirmation">
+          <label><input type="checkbox" id="ok"> I am 16 or older, or I have a parent or guardian's permission to use this tool.</label>
+          <a class="btn mag" id="go" href="http://localhost:7860" aria-disabled="true">Open the detector <span>↗</span></a>
+        </form>
+      </div>
+      <div class="hero-art rv" role="img" aria-label="Abstract orbital diagram representing text analysis">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <span class="core">M</span><span class="signal signal-a"></span><span class="signal signal-b"></span><span class="signal signal-c"></span>
+        <p class="art-note">HUMAN / AI<br><b>LIKELIHOOD</b></p>
+      </div>
+      <div class="hero-index">M / 2026</div>
+    </section>
+
+    <section id="how" class="section how-section">
+      <div class="section-heading"><p class="section-label">01 / PROCESS</p><h2 class="rv">WE READ THE<br><em>PATTERNS.</em></h2></div>
+      <div class="process-grid">
+        <article class="process-card rv"><b>01</b><h3>PARSE</h3><p>The input is prepared for analysis while keeping the writing's punctuation, casing, and structure.</p></article>
+        <article class="process-card rv"><b>02</b><h3>ANALYZE</h3><p>A classifier evaluates patterns learned from labelled human and AI-written examples.</p></article>
+        <article class="process-card rv"><b>03</b><h3>REPORT</h3><p>The result is shown as a probability estimate with warnings when confidence is limited.</p></article>
+      </div>
+    </section>
+
+    <section id="detector" class="section detector-section">
+      <div class="section-heading"><p class="section-label">02 / DETECTOR</p><h2 class="rv">PASTE YOUR<br><em>TEXT.</em></h2></div>
+      <div class="detector-panel rv">
+        <div><p class="panel-kicker">THE ANALYSIS HAPPENS ON YOUR RUNNING SERVER.</p><p class="panel-copy">Use the detector to inspect a paragraph, essay, or article. The landing page opens the local Gradio interface that runs your model.</p></div>
+        <a class="btn mag" href="http://localhost:7860">Run detector <span>↗</span></a>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq-section">
+      <div class="section-heading"><p class="section-label">03 / QUESTIONS</p><h2 class="rv">NO MAGIC.<br><em>JUST SIGNAL.</em></h2></div>
+      <div class="faq-list">
+        <details><summary>Can it prove someone used AI?</summary><p>No. It gives a statistical estimate that can be wrong. Do not use it as the sole basis for any decision about a person.</p></details>
+        <details><summary>When is it most likely to be wrong?</summary><p>Short text, edited or paraphrased AI text, translated text, formal writing, writing by non-native speakers, and text from newer AI models than it was trained on.</p></details>
+        <details><summary>Does it cost anything?</summary><p>No. There are no fees, subscriptions, or paid features in this project.</p></details>
+        <details><summary>Do you store my text?</summary><p>No. See the Privacy section below and review your server logs and deployment configuration before launch.</p></details>
+      </div>
+    </section>
+
+    <section id="privacy" class="legal-section"><h2>Privacy policy</h2><p class="mu">Template: replace placeholders and have a lawyer review it for your jurisdiction.</p><p><b>Controller:</b> [BUSINESS NAME], [REGISTERED ADDRESS], [REGISTRATION/GST NO.], contact: [EMAIL].</p><p><b>Data we process:</b> the text you paste, only to compute a result; it is not saved or used for training. Your server's standard logs may contain IP address and time, kept for [30] days for security.</p><p><b>Third parties:</b> none embedded. Fonts are self-hosted. Lenis is bundled locally in this project.</p></section>
+    <section id="terms" class="legal-section"><h2>Terms of service</h2><p>By using the tool you agree that results are estimates and carry no guarantee of accuracy; you will not use them as sole evidence of cheating, plagiarism, misconduct, or harassment; and you will not submit unlawful content or personal data of others without a legal basis.</p></section>
+    <section id="cookies" class="legal-section"><h2>Cookie policy</h2><p>This landing page sets no non-essential cookies and uses local storage only to remember the cookie-banner choice.</p></section>
+    <section id="delete" class="legal-section"><h2>Request data deletion</h2><p>We do not keep your pasted text, but you can ask us to delete or show any data we hold about you, such as server logs.</p><form id="df"><label>Your email (so we can reply)<input type="email" id="em" required autocomplete="email"></label><label><input type="checkbox" id="dc" required> I consent to using this email only to handle this request.</label><button class="btn" type="submit">Send deletion request</button><p class="mu" id="dm" role="status"></p></form></section>
+  </main>
+
+  <footer><p><b>MORPHEUS</b> · Experimental NLP classifier · <a href="mailto:contact@example.com">contact@example.com</a></p><p>Likelihood is not proof of authorship.</p></footer>
+  <div id="ck" role="dialog" aria-label="Cookie notice" hidden><p>We use no non-essential cookies. We remember only this choice. <a href="#cookies">Cookie policy</a></p><button class="btn" data-c="accepted">Accept</button><button class="btn secondary" data-c="rejected">Reject</button></div>
+
+  <script src="lenis.min.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
